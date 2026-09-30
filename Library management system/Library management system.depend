@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1790810346 source:c:\users\ryzen\desktop\c_project\library management system\main.c
+	<stdio.h>
+	<stdlib.h>
+
