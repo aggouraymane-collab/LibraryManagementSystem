@@ -5,7 +5,19 @@ struct Book {
     char title[100];
     char author[100];
     int year;
-
+};
+void addBook()
+{
+    struct Book book;
+    printf("Enter Book ID:");
+    scanf("%d",&book.id);
+    printf("\n Enter Book Title: \n ");
+    scanf(" %[^\n]",book.title);
+    printf("\nEnter Book AUTHOR:\n");
+    scanf(" %[^\n]",book.author);
+    printf("\nEnter publication year:\n");
+    scanf("%d",&book.year);
+    printf("\n book added successfully!\n");
 };
 int main()
 {
@@ -19,17 +31,17 @@ do{
      printf("3. SEARCH BOOK\n");
      printf("4. MODIFY BOOK\n");
      printf("5. DELETE BOOK\n");
-     printf("6. EXIT\m");
+     printf("6. EXIT\n");
      printf("\n===========================\n");
 
-     printf("ENTER YUR CHOICE\n");
+     printf("ENTER YOUR CHOICE\n");
      scanf("%d",&choice);
 
 
      switch(choice){
 
     case 1:
-        printf("ADD BOOK\n");
+      addBook();
         break;
 
     case 2:
@@ -49,8 +61,8 @@ do{
         printf("Goodbye!\n");
         break;
 
-            default:
-                printf("Invalid choice!\n");
+        default:
+        printf("Invalid choice!\n");
              }
         } while(choice!=6);
 
