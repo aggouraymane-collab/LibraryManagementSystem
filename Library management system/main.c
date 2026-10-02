@@ -6,17 +6,21 @@ struct Book {
     char author[100];
     int year;
 };
+struct Book books[100];
+bookCount=0;
+
 void addBook()
 {
     struct Book book;
     printf("Enter Book ID:");
-    scanf("%d",&book.id);
+    scanf("%d",&books[bookCount].id);
     printf("\n Enter Book Title: \n ");
-    scanf(" %[^\n]",book.title);
+    scanf(" %[^\n]",books[bookCount].title);
     printf("\nEnter Book AUTHOR:\n");
-    scanf(" %[^\n]",book.author);
+    scanf(" %[^\n]",books[bookCount].author);
     printf("\nEnter publication year:\n");
-    scanf("%d",&book.year);
+    scanf("%d",&books[bookCount].year);
+    bookCount++;
     printf("\n book added successfully!\n");
 };
 int main()
