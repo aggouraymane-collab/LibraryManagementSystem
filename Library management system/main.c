@@ -69,7 +69,39 @@ int found=0;
         printf("\nBook not found.\n");
     }
 }
+void modifyBook()
+{
+    int id;
+    int found = 0;
 
+    printf("\nEnter Book ID to modify: ");
+    scanf("%d", &id);
+
+    for (int i = 0; i < bookCount; i++)
+    {
+        if (books[i].id == id)
+        {
+            printf("\nBook found!\n");
+            printf("Enter new title: ");
+            scanf(" %[^\n]", books[i].title);
+            printf("Enter new author: ");
+            scanf(" %[^\n]", books[i].author);
+            printf("Enter new publication year: ");
+            scanf("%d", &books[i].year);
+
+            found = 1;
+
+            printf("\nBook modified successfully!\n");
+
+            break;
+        }
+    }
+
+    if (found == 0)
+    {
+        printf("\nBook not found.\n");
+    }
+}
 
 int main()
 {
@@ -100,10 +132,10 @@ do{
        displayBooks();
         break;
     case 3:
-        printf("SEARCH BOOK\n");
+        searchBook();
         break;
     case 4:
-        printf("MODIFY BOOK");
+        modifyBook();
         break;
 
     case 5:
