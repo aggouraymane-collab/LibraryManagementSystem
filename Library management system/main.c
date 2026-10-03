@@ -7,7 +7,7 @@ struct Book {
     int year;
 };
 struct Book books[100];
-bookCount=0;
+int bookCount=0;
 
 void addBook()
 {
@@ -22,7 +22,55 @@ void addBook()
     scanf("%d",&books[bookCount].year);
     bookCount++;
     printf("\n book added successfully!\n");
+}
+
+    void displayBooks()
+{
+    if (bookCount == 0)
+    {
+        printf("\nNo books in the library.\n");
+        return;
+    }
+
+    printf("\n========== BOOKS IN LIBRARY ==========\n");
+
+    for (int i = 0; i < bookCount; i++)
+    {
+        printf("\nBook %d\n", i + 1);
+        printf("ID: %d\n", books[i].id);
+        printf("Title: %s\n", books[i].title);
+        printf("Author: %s\n", books[i].author);
+        printf("Year: %d\n", books[i].year);
+
+    }
 };
+void searchBook(){
+int id;
+int found=0;
+
+   printf("\nEnter Book id\n ");
+   scanf("%d",&id);
+   for(int i=0 ; i < bookCount ; i++){
+    if(books[i].id == id){
+        printf("\n=======Book Found========\n");
+        printf("ID: %d\n", books[i].id);
+        printf("ID: %d\n", books[i].id);
+        printf("Title: %s\n", books[i].title);
+        printf("Author: %s\n", books[i].author);
+        printf("Year: %d\n", books[i].year);
+
+            found = 1;
+            break;
+        }
+    }
+
+    if (found == 0)
+    {
+        printf("\nBook not found.\n");
+    }
+}
+
+
 int main()
 {
 int choice;
@@ -49,7 +97,7 @@ do{
         break;
 
     case 2:
-        printf("DISPLAY BOOK\n");
+       displayBooks();
         break;
     case 3:
         printf("SEARCH BOOK\n");
